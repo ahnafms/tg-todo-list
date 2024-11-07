@@ -23,7 +23,6 @@ function EditTasksRow({ id, name, status }: taskTypes.Task) {
   });
 
   const onSubmit = (status: boolean) => {
-    if (status == false) return;
     setUpdateTask({
       id,
       name,
@@ -35,9 +34,9 @@ function EditTasksRow({ id, name, status }: taskTypes.Task) {
 
   return (
     <TableRow className="w-full">
-      <TableCell className="w-40 font-medium">{id}</TableCell>
-      <TableCell className="w-20">{name}</TableCell>
-      <TableCell className="w-20">{status}</TableCell>
+      <TableCell className="w-40 font-semibold">{id}</TableCell>
+      <TableCell className="w-20 font-semibold">{name}</TableCell>
+      <TableCell className="w-20 font-semibold">{status}</TableCell>
       <TableCell className="w-20">
         <Form {...form}>
           <form>
