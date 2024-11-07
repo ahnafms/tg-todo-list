@@ -12,6 +12,7 @@ import { updateTasksAtom } from "@/stores/tasks";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSetAtom } from "jotai";
 import { useForm } from "react-hook-form";
+import { cn } from "@/lib/utils";
 
 function EditTasksRow({ id, name, status }: taskTypes.Task) {
   const setUpdateTask = useSetAtom(updateTasksAtom);
@@ -32,11 +33,25 @@ function EditTasksRow({ id, name, status }: taskTypes.Task) {
     });
   };
 
+  const isChecked = form.watch("status");
+
   return (
     <TableRow className="w-full">
-      <TableCell className="w-40 font-semibold">{id}</TableCell>
-      <TableCell className="w-20 font-semibold">{name}</TableCell>
-      <TableCell className="w-20 font-semibold">{status}</TableCell>
+      <TableCell
+        className={cn("w-40 font-semibold", isChecked && "line-through")}
+      >
+        {id}
+      </TableCell>
+      <TableCell
+        className={cn("w-20 font-semibold", isChecked && "line-through")}
+      >
+        {name}
+      </TableCell>
+      <TableCell
+        className={cn("w-20 font-semibold", isChecked && "line-through")}
+      >
+        {status}
+      </TableCell>
       <TableCell className="w-20">
         <Form {...form}>
           <form>

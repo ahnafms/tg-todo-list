@@ -8,6 +8,5 @@ export const updateTasksAtom = atom(null, (get, set, task: Task) => {
 
   const updatedTasks = tasks.map((t) => (t.id === task.id ? task : t));
 
-  // Set the new array to tasksAtom
   set(tasksAtom, updatedTasks);
 });
