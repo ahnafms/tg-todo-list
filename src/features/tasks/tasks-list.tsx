@@ -11,7 +11,7 @@ import { tasksAtom } from "@/stores/tasks";
 import { useAtomValue } from "jotai";
 import EditTasksRow from "./edit-tasks-row";
 
-const headers = ["id", "name", "status", "check"];
+const headers = ["id", "name", "status", "check", "delete"];
 
 export const TasksList = () => {
   const tasks = useAtomValue(tasksAtom);

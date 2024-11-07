@@ -8,14 +8,16 @@ import {
 } from "@/components/ui/form";
 import { TableCell, TableRow } from "@/components/ui/table";
 import { taskContracts, taskTypes } from "@/entities/task";
-import { updateTasksAtom } from "@/stores/tasks";
+import { deleteTasksAtom, updateTasksAtom } from "@/stores/tasks";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSetAtom } from "jotai";
 import { useForm } from "react-hook-form";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 function EditTasksRow({ id, name, status }: taskTypes.Task) {
   const setUpdateTask = useSetAtom(updateTasksAtom);
+  const setDeleteTask = useSetAtom(deleteTasksAtom);
   const form = useForm<{ status: boolean }>({
     resolver: zodResolver(taskContracts.EditTaskSchema),
     defaultValues: {
@@ -31,6 +33,10 @@ function EditTasksRow({ id, name, status }: taskTypes.Task) {
         ? taskContracts.Status.FINISH
         : taskContracts.Status.ON_GOING,
     });
+  };
+
+  const onDelete = () => {
+    setDeleteTask(id);
   };
 
   const isChecked = form.watch("status");
@@ -76,6 +82,9 @@ function EditTasksRow({ id, name, status }: taskTypes.Task) {
             />
           </form>
         </Form>
+      </TableCell>
+      <TableCell className="w-20">
+        <Button onClick={onDelete}>Delete</Button>
       </TableCell>
     </TableRow>
   );

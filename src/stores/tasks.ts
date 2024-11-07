@@ -10,3 +10,9 @@ export const updateTasksAtom = atom(null, (get, set, task: Task) => {
 
   set(tasksAtom, updatedTasks);
 });
+
+export const deleteTasksAtom = atom(null, (get, set, id: Task["id"]) => {
+  const tasks = get(tasksAtom);
+  const filteredTask = tasks.filter((t) => t.id != id);
+  set(tasksAtom, filteredTask);
+});
