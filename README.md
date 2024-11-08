@@ -5,7 +5,7 @@ This is a Task Management web application built with React. It allows users to c
 ## Project Structure
 
 - **`/app`**: Entry point for the application, managing routes and pages.
-- **`/component/`**: Contains UI components. We use Shadcn for reusable UI elements such as buttons and forms.
+- **`/component/`**: Contains UI components. I use Shadcn for reusable UI elements such as buttons and forms.
 - **`/config`**: Stores library and framework configuration. This includes configuration for third-party libraries, constants, or environment-specific settings.
 - **`/features`**: The controller for task data. This folder contains logic for creating, editing, and deleting tasks.
 - **`/entities`**: Data models such as the `Task` entity, which includes properties like `id`, `name`.
@@ -27,3 +27,13 @@ This is a Task Management web application built with React. It allows users to c
 - **Jotai**: For state management.
 - **TailwindCSS**: For styling, including responsiveness.
 - **Vercel**: For deployment
+
+# Deploying the Web App on Vercel
+
+1. Sign up or Log in Vercel with github account
+2. Connect respository to vercel (on vercel dashboard)
+3. After connected, vercel will create automatic deployment whenever there are changes in git repository.
+
+## Improvement on deployment
+
+For larger application need environment variable to store sensitive information and configuration settings (to change based on environment) and preview deployment before merging to main branch
