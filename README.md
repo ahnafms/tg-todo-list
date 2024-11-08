@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
+# Task Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Task Management web application built with React. It allows users to create, edit, and delete tasks, with a clean and responsive UI. The app utilizes Shadcn for UI components, Jotai for state management, and is structured for easy maintenance and scalability follow React Bulletproof architecture and folder structuring (with extra layer for data model).
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **`/app`**: Entry point for the application, managing routes and pages.
+- **`/component/`**: Contains UI components. We use Shadcn for reusable UI elements such as buttons and forms.
+- **`/configs`**: Data models such as the `Task` entity, which includes properties like `id`, `name`.
+- **`/features`**: The controller for task data. This folder contains logic for creating, editing, and deleting tasks.
+- **`/entities`**: Data models such as the `Task` entity, which includes properties like `id`, `name`.
+- **`/libs`**: Stores reusable helper function.
+- **`/stores`**: Manages the app's state using Jotai. It defines atoms to manage the global state of the app.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Create Task**: Allows users to add new tasks.
+- **Edit Task**: Users can edit existing tasks.
+- **Delete Task**: Each task has a delete button to remove it from the list.
+- **Responsive Design**: The app works across different screen sizes, ensuring a consistent experience on both web and mobile.
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **React**: For building the user interface.
+- **Vite**: For development server
+- **Shadcn**: For UI components such as buttons, forms, etc.
+- **Jotai**: For state management.
+- **TailwindCSS**: For styling, including responsiveness.
+- **Vercel**: For deployment
