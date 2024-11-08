@@ -6,10 +6,10 @@ This is a Task Management web application built with React. It allows users to c
 
 - **`/app`**: Entry point for the application, managing routes and pages.
 - **`/component/`**: Contains UI components. We use Shadcn for reusable UI elements such as buttons and forms.
-- **`/configs`**: Data models such as the `Task` entity, which includes properties like `id`, `name`.
+- **`/config`**: Data models such as the `Task` entity, which includes properties like `id`, `name`.
 - **`/features`**: The controller for task data. This folder contains logic for creating, editing, and deleting tasks.
 - **`/entities`**: Data models such as the `Task` entity, which includes properties like `id`, `name`.
-- **`/libs`**: Stores reusable helper function.
+- **`/lib`**: Stores reusable helper function.
 - **`/stores`**: Manages the app's state using Jotai. It defines atoms to manage the global state of the app.
 
 ## Features
