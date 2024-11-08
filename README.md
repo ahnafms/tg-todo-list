@@ -1,4 +1,4 @@
-# Task Management App
+# To-do list App
 
 This is a Task Management web application built with React. It allows users to create, edit, and delete tasks, with a clean and responsive UI. The app utilizes Shadcn for UI components, Jotai for state management, and is structured for easy maintenance and scalability follow React Bulletproof architecture and folder structuring (with extra layer for data model).
 
@@ -6,7 +6,7 @@ This is a Task Management web application built with React. It allows users to c
 
 - **`/app`**: Entry point for the application, managing routes and pages.
 - **`/component/`**: Contains UI components. We use Shadcn for reusable UI elements such as buttons and forms.
-- **`/config`**: Data models such as the `Task` entity, which includes properties like `id`, `name`.
+- **`/config`**: Stores library and framework configuration. This includes configuration for third-party libraries, constants, or environment-specific settings.
 - **`/features`**: The controller for task data. This folder contains logic for creating, editing, and deleting tasks.
 - **`/entities`**: Data models such as the `Task` entity, which includes properties like `id`, `name`.
 - **`/lib`**: Stores reusable helper function.
